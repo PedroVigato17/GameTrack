@@ -1,0 +1,260 @@
+:root {
+    --bg-primary: #121214;
+    --bg-secondary: #202024;
+    --bg-card: #29292e;
+    --text-primary: #e1e1e6;
+    --text-secondary: #a8a8b3;
+    --accent-color: #8257e5;
+    --accent-hover: #996dff;
+    --danger-color: #f75a68;
+    --border-radius: 8px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+header {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+header h1 {
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    font-size: 2.2rem;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card-indicador {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-indicador span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.card-indicador p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+#secao-formulario {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#secao-formulario h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+#form-jogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+input, select {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--bg-card);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-color);
+}
+
+#btn-salvar {
+    grid-column: 1 / -1;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#btn-salvar:hover {
+    background-color: var(--accent-hover);
+}
+
+#controles {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#pesquisa {
+    flex: 1;
+    min-width: 200px;
+}
+
+#filtro-status {
+    min-width: 150px;
+}
+
+#secao-lista h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+#lista-jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-jogo {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.card-jogo:hover {
+    transform: translateY(-3px);
+}
+
+.card-jogo h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card-jogo p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.badge-status {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
+}
+
+.status-jogando {
+    background-color: #2b4c7e;
+    color: #8bb4f7;
+}
+
+.status-finalizado {
+    background-color: #1e4a38;
+    color: #72f2b3;
+}
+
+.status-quero-jogar {
+    background-color: #4a3b1e;
+    color: #f2c972;
+}
+
+.status-abandonado {
+    background-color: #4a1e1e;
+    color: #f27272;
+}
+
+.acoes-card {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-editar, .btn-excluir {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.btn-editar {
+    background-color: #323238;
+    color: var(--text-primary);
+}
+
+.btn-editar:hover {
+    background-color: #41414c;
+}
+
+.btn-excluir {
+    background-color: rgba(247, 90, 104, 0.1);
+    color: var(--danger-color);
+}
+
+.btn-excluir:hover {
+    background-color: var(--danger-color);
+    color: #fff;
+}
